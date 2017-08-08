@@ -1,0 +1,10 @@
+<h1>FamilyGuyWiki</h1>
+
+<h2> <%= link_to "Add a new article", new_article_path %> </h2>
+
+<% @articles.each_with_index do |article, index| %>
+<p> <%= link_to "#{index + 1} - #{article.title}", article_path(article) %> </p>
+<p> <%= link_to "Edit", edit_article_path(article) %> |
+<%= link_to "Delete", article_path(article), method: :delete %></p>
+<p> <%= "*" * 20 %> </p>
+<% end %>
